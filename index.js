@@ -1,36 +1,61 @@
-let num1;
-let num2;
+let firstCard = getRandomCard()
+let secondCard = getRandomCard()
+let cards = [firstCard, secondCard]
+let sum = firstCard + secondCard
+let hasBlackJack = false
+let isAlive = true
+let message = ""
+let messageEl = document.getElementById("message-el")
+let sumEl = document.getElementById("sum-el")
+let cardsEl = document.getElementById("cards-el")
 
-let message = document.getElementById('message-element');
 
-let totalScore = 0;
+function getRandomCard() {
+    return Math.floor( Math.random()*11 ) + 1
+}
 
-let blackjack = false;
-let isInGame = true;
+function startGame() {
+    renderGame()
+}
 
+function renderGame() {
+    cardsEl.textContent = "Cards: "
 
-function dealCards() {
-
-    num1 = Math.floor((Math.random() * 13) + 1);
-    num2 = Math.floor((Math.random() * 13) + 1);
-
-    totalScore = num1 + num2;
-    
-    let card1 = document.getElementById('card-1');
-    let card2 = document.getElementById('card-2');
-    let total = document.getElementById('total-score');
-
-    card1.textContent = 'Card: ' + num1;
-    card2.textContent = 'Card: ' + num2;
-
-    total.textContent = 'Total Score: ' + totalScore;
-
-    if (totalScore < 21) {
-        message.textContent = 'Would you like to Play another card?'
-    } else if (totalScore === 21) {
-        message.textContent = 'BLACKJACK!'
-    } else {
-        message.textContent = 'Bust!'
+    for (let i = 0; i < cards.length; i++) {
+        cardsEl.textContent += cards[i] + " "
     }
     
+    sumEl.textContent = "Sum: " + sum
+
+    if (sum <= 20) {
+        message = "Do you want to draw a new card?"
+    } else if (sum === 21) {
+        message = "You've got Blackjack!"
+        hasBlackJack = true
+    } else {
+        message = "You're out of the game!"
+        isAlive = false
+    }
+    messageEl.textContent = message
+}
+
+
+function newCard() {
+
+    if (isAlive && sum <= 21) {
+        let card = getRandomCard()
+        sum += card
+        cards.push(card)
+        renderGame()
+    } else {
+        message = "You're out of the game!";
+        isAlive = false;
+    }
+    messageEl.textContent = message;
+}
+
+function resetCards() {
+    messageEl.textContent = 'Want to play a round?';
+    cardsEl.textContent = 'Cards: ';
+    sumEl.textContent = 'Sum: ';
 }

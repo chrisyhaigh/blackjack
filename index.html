@@ -8,15 +8,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container-fluid">
-        <h1 class="heading">BLACKJACK</h1>
-        <p id="message-element">Would you like to play ?</p>
-            <div class="card-container">
-                <h3 id="card-1">Card: </h3>
-                <h3 id="card-2">Card: </h3>
-            </div>
-        <h2 id="total-score">TOTAL: </h2>
-        <button id="start-btn" onclick="dealCards()">START GAME</button>
+    <h1>Blackjack</h1>
+    <p id="message-el">Want to play a round?</p>
+    <p id="cards-el">Cards: </p>
+    <p id="sum-el">Sum: </p>
+    <div class="button-container">
+        <button onclick="startGame()">START GAME</button>
+        <button class="deal-btn" onclick="resetCards()">RESET</button>
+        <button onclick="newCard()">NEW CARD</button>
     </div>
     <script src="libraries/jquery/jquery-3.7.0.min.js"></script>
     <script src="index.js"></script>

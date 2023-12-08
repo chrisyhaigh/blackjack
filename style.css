@@ -1,57 +1,56 @@
 body {
-    margin: 0;
-    background-image: url('images/Professional-Live-Blackjack.jpg');
-    background-position: top;
+    padding: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;
+    background-image: url("images/game.netentBlackjack3Hand.backgroundimage_v3.webp");
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
-    padding: 40px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 26px;
     color: white;
+    text-align: center;
 }
 
-.heading {
+h1 {
     color: goldenrod;
-    font-size: 50px;
-    font-weight: 900;
-    margin-bottom: 20px;
+    font-size: 48px;
 }
 
-.container-fluid {
+#message-el {
+    font-style: italic;
+}
+
+.button-container {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
-
-.card-container {
-    width: 220px;
-    display: flex;
-    justify-content: space-between;
-}
-
-#message-element {
-    font-style: italic;
-    font-size: 22px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
-}
-
-#total-score {
-    padding: 20px;
-    text-align: left;
-}
-
+/* 3. Make sure that the two buttons have some space between
+each other when they are rendered out vertically */
 button {
+    color: #016f32;
     width: 200px;
-    margin-top: 20px;
-    padding: 8px;
-    font-size: 22px;
-    background-color: goldenrod;
-    color: white;
-    border: 0;
-    border-radius: 5cqb;
+    background: goldenrod;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    border: none;
+    border-radius: 2px;
+    margin-bottom: 5px;
+    margin-top: 2px;
 }
 
 button:hover {
-    background-color: gold;
+    background-color: darkgoldenrod;
+}
+
+.deal-btn {
+    background-color: white;
+    color: red;
+}
+
+.deal-btn:hover {
+    background-color:darkgrey;
 }
